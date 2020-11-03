@@ -1,0 +1,43 @@
+.hidden {
+  display: none;
+}
+
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  justify-content: center;
+}
+
+.search-input {
+  display: flex;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 15px auto;
+  padding: 2px;
+  height: 1.8rem;
+  width: 45%;
+}
+
+.search-input:focus-within {
+  border-color: #9ecaed;
+  box-shadow: 0 0 2px #9ecaed;
+}
+
+.search-input input:focus {
+  outline: none;
+}
+
+.search-input input {
+  flex-grow: 2;
+  border: none;
+}
+
+#submit-term {
+  color: white;
+  font-weight: 800;
+  border-radius: 2px;
+  background-color: #007bff;
+  max-width: 25%;
+  cursor: pointer;
+}
