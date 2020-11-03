@@ -20,8 +20,9 @@
 }
 
 .post-footer a {
-  background-color: blue;
-  color: white;
+  background-color: #007bff;
+  font-weight: 600;
+  color: white !important;
   padding: 10px;
   border-radius: 10px;
   text-decoration: none;
