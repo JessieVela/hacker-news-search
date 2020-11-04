@@ -12,7 +12,7 @@ export const getPosts = async (searchWords: string) => {
     await Axios.get(
       `https://hn.algolia.com/api/v1/search?query=${searchTerms}`
     ).then((res) => {
-      response = res.data;
+      response = res.data.hits;
     });
     return response;
   } catch (error) {

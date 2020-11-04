@@ -1,4 +1,4 @@
-const postsDispatch = (state = [], action) => {
+const postsDispatch = (state = {}, action) => {
   switch (action.type) {
     case "SET_POSTS":
       return { ...action.payload };

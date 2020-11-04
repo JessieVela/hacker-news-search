@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import Post from "./Post";
 import { connect } from "react-redux";
 import { setPosts } from "../store/actions";
 import { getPosts } from "../Util.ts";
+import * as _ from "underscore";
+import Post from "./Post";
 import "../styles/search.css";
 
 class Search extends Component {
@@ -31,7 +32,17 @@ class Search extends Component {
     this.props.setPosts(await getPosts(this.state.searchTerms));
   };
 
+  filter = (event) => {
+    event.preventDefault();
+    let sort = event.target.value;
+
+    let sortedPosts = _.sortBy(this.props.posts, "created_at_i");
+    if (sort === "Asc") this.props.setPosts(sortedPosts);
+    else if (sort === "Desc") this.props.setPosts(sortedPosts.reverse());
+  };
+
   render() {
+    console.log(_.size(this.props.posts));
     return (
       <React.Fragment>
         <div>
@@ -45,11 +56,16 @@ class Search extends Component {
             <input id="submit-term" type="submit" value="Submit" />
           </form>
         </div>
-        <div
-          className={this.props.posts.hits ? "post-list" : "post-list hidden"}
-        >
-          {this.props.posts.hits
-            ? this.props.posts.hits.map((post, index) => {
+        <div className={_.size(this.props.posts) > 0 ? "filter" : "hidden"}>
+          <select className="dropdown" onChange={this.filter}>
+            <option value="">Sort By Date</option>
+            <option value="Asc">Ascending</option>
+            <option value="Desc">Descending</option>
+          </select>
+        </div>
+        <div className={_.size(this.props.posts) > 0 ? "post-list" : "post-list hidden"}>
+          {this.props.posts !== undefined
+            ? Object.values(this.props.posts).map((post, index) => {
                 return <Post key={index} post={post} />;
               })
             : null}
