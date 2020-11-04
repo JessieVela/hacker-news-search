@@ -2,6 +2,9 @@
 
 Uses the https://hn.algolia.com/api to get news articles that a user inputs.
 
+Live demo available [Here](https://jessie-search.herokuapp.com/)
+> Demo is on a free heroku instance, so it could take a few seconds to wake up
+
 ## Available Scripts
 
 In the project directory, you can run:
