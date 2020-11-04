@@ -42,7 +42,6 @@ class Search extends Component {
   };
 
   render() {
-    console.log(_.size(this.props.posts));
     return (
       <React.Fragment>
         <div>

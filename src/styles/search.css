@@ -43,9 +43,14 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 760px) {
-.search-input {
-  width: 45%;
-  margin: 15px auto;
+.filter {
+  width: 123px;
+  margin: auto;
 }
+
+@media screen and (min-width: 760px) {
+  .search-input {
+    width: 45%;
+    margin: 15px auto;
+  }
 }
