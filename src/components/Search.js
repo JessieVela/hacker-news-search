@@ -14,14 +14,14 @@ class Search extends Component {
     };
   }
 
-  // Sets the search terms as a user types
+  // Sets the search terms state as a user types
   handleChange = (event) => {
     this.setState({ searchTerms: event.target.value });
   };
 
   /**
-   * Calls Util function to retrieve Posts and calls action to save to state.
-   * @param event - sends the event object when a user hits submit 
+   * Calls Util function to retrieve Posts and calls setPosts action to save to state.
+   * @param event - sends the event object when a user hits submit
    */
   search = async (event) => {
     event.preventDefault();

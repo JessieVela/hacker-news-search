@@ -38,7 +38,7 @@ const Post = (props) => {
               Read Post →
             </a>
           ) : (
-            <p>No URL</p>
+            <p>No Link Available</p>
           )}
         </div>
       </div>
